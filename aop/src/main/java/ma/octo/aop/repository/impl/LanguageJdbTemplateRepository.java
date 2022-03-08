@@ -16,13 +16,10 @@ import java.util.Optional;
 
 public class LanguageJdbTemplateRepository implements LanguageRepository {
 
-    private DataSource dataSource;
-
     private JdbcTemplate jdbctemplate;
 
-    public LanguageJdbTemplateRepository(DataSource dataSource) {
-        this.dataSource = dataSource;
-        this.jdbctemplate =new JdbcTemplate(this.dataSource);
+    public LanguageJdbTemplateRepository(JdbcTemplate jdbctemplate) {
+        this.jdbctemplate = jdbctemplate;
     }
 
     @Override
